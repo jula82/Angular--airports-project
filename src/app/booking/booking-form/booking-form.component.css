@@ -1,0 +1,79 @@
+label {
+    font-weight:500 !important;
+}
+
+select {
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 140 140' width='24' height='24' xmlns='http://www.w3.org/2000/svg'><g><path d='m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z' fill='rgb(71,167,255)'/></g></svg>");
+    background-position:
+    calc(100% - 10px) 14px,
+    calc(100% - 20px) 14px,
+    100% 0;
+    background-size:
+    10px 10px,
+    10px 10px;
+    background-repeat: no-repeat;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-size:11px;
+    color: rgb(71,167,255);
+    border-color: rgb(71,167,255);
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+    color:red;
+}
+
+input {
+    font-size:11px;
+    border: 1px solid rgb(71,167,255);
+    color: rgb(71,167,255);
+}
+
+::placeholder {
+    color: rgb(71,167,255);
+}
+
+input.ng-invalid.ng-touched::placeholder{
+    color: red;
+}
+
+.form-control {
+    border-radius: 0 !important;
+    height:38px;
+    margin-left: 0px !important;
+}
+
+#addToCartBtn {
+    background-color: rgb(71,168,255);
+    border: 0 !important;
+    padding:8px 15px;
+    color:white;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.addToCartBtnDisabled {
+    background-color:rgb(150,205,255) !important;
+    cursor: not-allowed;
+}
+
+.container {
+    max-width: 100% !important;
+}
+
+.errorText {
+    font-size: 11px;
+    color: red;
+}
+
+#toAirport {
+    border: 1px solid #8ac7ff !important;
+    color: #8ac7ff;
+}
+
+#fromAirport {
+    border: 1px solid #8ac7ff !important;
+    color: #8ac7ff;
+}

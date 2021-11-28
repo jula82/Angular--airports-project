@@ -1,0 +1,92 @@
+<div>
+
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="container">
+            <div class="row">
+              <div class="col-md form-group">
+                <label for="name">Imię</label>
+                <input type = "text"
+                    id = "name"
+                    class = "form-control"
+                    ngModel
+                    name = "name"
+                    placeholder="Wpisz imię"
+                    #name="ngModel"
+                    required
+                >
+                <span class="errorText" *ngIf="!name.valid && name.touched" >
+                  To pole jest wymagane!
+                </span>
+              </div>
+              <div class="col-md form-group">
+                    <label for="lastName">Nazwisko</label>
+                    <input type = "text"
+                       id = "lastName"
+                       class = "form-control"
+                       ngModel
+                       name = "lastName"
+                       placeholder="Wpisz nazwisko"
+                       required
+                       #fullName="ngModel"
+                    >
+                    <span class="errorText" *ngIf="!fullName.valid && fullName.touched" >
+                      To pole jest wymagane!
+                    </span>
+                </div>
+              <div class="w-100"></div>
+              <div class="col-md form-group" >
+                  <label for="peopleAmount">Ilość osób</label>
+                    <input type = "number"
+                    id = "peopleAmount"
+                    class = "form-control"
+                    ngModel
+                    appAmountPeopleValidation
+                    name = "peopleAmount"
+                    placeholder="Wybierz ilość ludzi"
+                    #peopleAmount="ngModel"
+                    >
+                    <span class="errorText" *ngIf="!peopleAmount.valid && peopleAmount.touched" >
+                      Ilość musi być większa od 0!
+                    </span>
+                </div>
+              <div class="col-md form-group">
+                <label for="airplaneClass">Klasa</label>
+                <select id = "airplaneClass" type="select" name="airplaneClass" class="form-select form-control" ngModel [(ngModel)]="airplaneClass" ngModel>
+                  <option *ngFor="let airplaneClass of airplaneClasses" ngDefaultControl>{{airplaneClass}}</option>
+                </select>
+              </div>
+              <div class="w-100"></div>
+              <div class="col-md form-group" disabled>
+                <label for="date">Data i godzina wylotu</label>
+                <angular2-date-picker type="date"  ngModel class="dateContainer date" id="date" name="date" [(ngModel)]="date" [settings]="settings" style="font-size:11px" [ngStyle]="{'pointer-events': true ? 'none' : 'auto' }"></angular2-date-picker>
+              </div>
+
+              <div class="col-md form-group">
+                <label for="dateTo">Data i godzina przylotu</label>
+                <angular2-date-picker type="date" ngModel class="dateContainer dateTo" id="dateTo" name="dateTo" [(ngModel)]="dateTo" [settings]="settings" style="font-size:11px" [ngStyle]="{'pointer-events': true ? 'none' : 'auto' }"></angular2-date-picker>
+              </div>
+
+              <div class="w-100"></div>
+              <div class="col-md form-group">
+                <label for="fromAirport">Miejsce wylotu</label>
+                <select id = "fromAirport" type="select" name="fromAirport" class="form-select form-control" [ngStyle]="{'pointer-events': true ? 'none' : 'auto' }" ngModel [(ngModel)]="fromAirport" >
+                  <option *ngFor="let airport of getAirports('toAirport')" ngDefaultControl>{{airport}}</option>
+                </select>
+              </div>
+
+              <div class="col-md form-group">
+                <label for="toAirport">Miejsce przylotu</label>
+                <select id = "toAirport" type="select" name="toAirport" class="form-select form-control" ngModel [(ngModel)]="toAirport" [ngStyle]="{'pointer-events': true ? 'none' : 'auto' }" >
+                  <option *ngFor="let airport of getAirports('fromAirport')" ngDefaultControl>{{airport}}</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="m-4" style="text-align: center;">
+              <button id="addToCartBtn" [ngClass]="{'addToCartBtnDisabled': !f.valid}" type="submit" [disabled]="!f.valid" >Dodaj do koszyka</button>
+            </div>
+           
+          </div>
+    </form>
+
+</div>

@@ -1,0 +1,57 @@
+.componentBackground {
+    background-color: rgb(255,255,255);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap !important;
+    margin-bottom: 0px;
+    position: relative;
+    box-shadow: 1px 4px 5px 1px rgb(0 0 0 / 15%);
+}
+
+.table td, .table th {
+    border: 0 !important;
+    max-width:200px;
+}
+
+.noCursor {
+    pointer-events: none;
+    cursor: none;
+}
+
+tr:hover {
+    cursor:pointer;
+    background-color: rgb(71,168,255) !important;
+    color: white !important;
+}
+tr:nth-child(even) {background: rgb(248,248,248)}
+tr:nth-child(odd) {background: white}
+
+#load_btn {
+    background-color: transparent;
+    border: none;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgb(49,157,255);
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.active-row {
+    font-weight: 600;
+    background-color: rgb(71,168,255);
+}
+
+
+.active-row{
+    background-color: rgb(71,168,255) !important;
+    color: white !important;
+}
+
+@media only screen and (max-width: 992px) {
+    .componentBackground {
+        margin-top: 40px !important;
+    }    
+  }

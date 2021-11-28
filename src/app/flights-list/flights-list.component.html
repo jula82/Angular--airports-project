@@ -1,0 +1,20 @@
+<div class="componentBackground flightsContent">
+    <div class="m-2">
+        <p class="sectionTitle">Lista lotów</p>
+    </div>
+
+    <table class="table">
+        <tbody>
+          <tr (click)="onSelect(i)" class="rowToHighlight" *ngFor="let flight of getFlights(); let i = index" (click)=sendToBookingFormComponent(flight,i) [ngClass]="{'noCursor': !isAuthenticated }">
+            <td *ngIf="!reservationPage">{{ flight.from.name }} ({{ flight.from.code }})</td>
+            <td *ngIf="!reservationPage">{{ flight.to.name }} ({{ flight.to.code }})</td>
+            <td *ngIf="reservationPage">{{ flight.from.code }} <fa-icon [icon]="arrowExchange"></fa-icon> {{ flight.to.code }}</td>
+            <td>{{ flight.date }}, {{flight.time}}</td>
+            <td>{{ flight.dateTo }}, {{ flight.timeTo}}</td>
+            <td *ngIf="isAuthenticated"><fa-icon [icon]="arrow"></fa-icon></td>
+          </tr>
+        </tbody>
+    </table>
+
+      <button id="load_btn" (click)="onLoadMore()" *ngIf="(counter + 10) < getFlightsCount()" >Załaduj więcej</button>
+</div>

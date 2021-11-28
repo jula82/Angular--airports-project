@@ -1,0 +1,45 @@
+<div class="centeredContentAuth">
+    <div>
+  
+      <div class="alert alert-danger mb-5" *ngIf="errorAccured">
+        {{ errorAccured }}
+      </div>
+      <app-loading *ngIf="isLoading"></app-loading>
+      <form *ngIf="!isLoading" [formGroup]="signUpForm" (ngSubmit)="onSubmitForm()">
+        <div>
+          <mat-form-field class="measurement">
+            <mat-label>Email</mat-label>
+            <input matInput ngModel formControlName="email" placeholder="Ex. pat@example.com">
+           
+            <mat-error *ngIf="signUpForm.get('email').touched &&  signUpForm.get('email').invalid">
+              Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="signUpForm.get('email').touched">
+              Email is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+       
+        <div class="mt-2">
+          <mat-form-field class="measurement">
+            <mat-label>Password</mat-label>
+              <input id="password" required type="password" minlength="6" ngModel formControlName="password" matInput >
+          </mat-form-field>
+        </div>
+
+        <div>
+            <button id="loginBtn" type="submit" [ngClass]="{'disabledLogin': !signUpForm.valid}" [disabled]="!signUpForm.valid">{{ loginMode ? 'Zaloguj się' : 'Zarejestruj się'}}</button>
+        </div>
+
+        
+        
+      </form> 
+      <div  class="mt-1" *ngIf="loginMode">
+        <span>Nie masz konta? </span> <span id="signUp" (click)="loginSwitch()">Zarejestruj się</span>
+      </div>
+      <div class="mt-1" *ngIf="!loginMode">
+        <span>Masz konto? </span> <span id="signUp" (click)="loginSwitch()"> Zaloguj się</span>
+    </div>
+    </div>
+</div>
+

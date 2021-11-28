@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+   
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse textStyle" id="navbarContent">
+      <ul class="navbar-nav mr-auto">
+        <li routerLinkActive="active-link" class="nav-item mx-2">
+            <a class="nav-link" routerLink="/flights">Loty</a>
+        </li>
+        <li *ngIf="isAuthenticated" routerLinkActive="active-link" class="nav-item mx-2">
+            <a class="nav-link" routerLink="/reservation">Rezerwacja</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav">
+        <li *ngIf="isAuthenticated" class="nav-item mx-2" routerLinkActive="active-link" id="cart-item">
+          <a class="nav-link" routerLink="/cart">
+              <div class="wrapper">
+                <img src="./assets/img/shopping-cart.png" class="image-icon" alt="cart">
+                <div id="cartAmount"><span>{{getCartAmount()}}</span></div>
+              </div>
+          </a>
+        </li>
+        <li *ngIf="isAuthenticated" class="nav-item mx-2">
+            <a class="nav-link" [ngStyle]="{'pointer-events': true ? 'none' : 'auto' }"> {{email}}</a>
+            <img src="./assets/img/user.png" class="image-icon" alt="user">
+        </li> 
+        <li routerLinkActive="active-link" *ngIf="!isAuthenticated" class="nav-item mx-2">
+          <a class="nav-link" routerLink="/auth"> Zaloguj się</a>
+        </li>
+
+        <li *ngIf="isAuthenticated" (click)="onLogout()" style="cursor:pointer" class="nav-item mx-2">
+          <a class="nav-link"> Wyloguj się</a>
+        </li>
+      </ul>
+
+      
+    </div>
+  </nav>

@@ -1,0 +1,15 @@
+
+<div class="d-flex flex-wrap justify-content-between mt-4 mb-4">
+    <div class="col-lg-5  reservationContainer">
+        <div class="m-4 spaceBetween">
+            <p class="sectionTitle">Rezerwacja</p>
+            <div class="code-container">
+                {{flight.from.code}}   <fa-icon [icon]="arrowExchange"></fa-icon>  {{flight.to.code}}
+            </div>
+        </div>
+        <app-booking-form (rowEmit)="updateCodes($event)"></app-booking-form>
+    </div>
+    <div class="col-lg-6 flightsContainer">
+        <app-flights-list></app-flights-list>
+    </div>
+</div>

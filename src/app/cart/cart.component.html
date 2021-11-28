@@ -1,0 +1,32 @@
+<div class="cartContent mt-5">
+    <table class="table styled-table">
+        <thead>
+            <tr>
+                <th scope="col">Imię</th>
+                <th scope="col">Nazwisko</th>
+                <th scope="col"> Miejsce odlotu</th>
+                <th scope="col">Miejsce przylotu</th>
+                <th scope="col">Czas odlotu</th>
+                <th scope="col">Czas przylotu</th>
+                <th scope="col">Klasa</th>
+                <th scope="col">Ilość ludzi</th>
+                <th scope="col"></th>
+            </tr>
+            
+        </thead>
+        <tbody>
+            <tr *ngFor="let obj of getCartContent(); let i = index">
+            <td scope="row"> {{ obj.name }}</td>
+            <td>{{obj.lastName}}</td>
+            <td>{{ obj.fromAirport }}</td>
+            <td>{{ obj.toAirport }}</td>
+            <td>{{ getParsedDate(obj.dateStart) }}</td>
+            <td>{{ getParsedDate(obj.dateEnd) }}</td>
+            <td>{{ obj.className }}</td>
+            <td>{{ obj.peopleAmount }}</td>
+            <td> 
+                <img src="./assets/img/remove.png" (click)="deleteFromCart(i)" class="iconStyle" alt="remove icon">
+            </tr>
+        </tbody>
+    </table>
+</div>

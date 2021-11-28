@@ -1,0 +1,39 @@
+<div class="col-sm-12 mt-4 componentBackground">
+    <div class="m-2">
+        <p class="sectionTitle">Wyszukaj loty</p>
+    </div>
+    <div>
+        <div class="row">
+            <div class="col-md m-1">
+                <select class="form-select" [(ngModel)]="fromAirport"  >
+                    <option *ngFor="let airport of getAirports('toAirport')"  name="fromAirport" ngDefaultControl>{{airport}}</option>
+                </select>
+            </div>
+            <div class="col-md m-1">
+                <select class="form-select" [(ngModel)]="toAirport">
+                    <option *ngFor="let airport of getAirports('fromAirport')" name="toAirport" ngDefaultControl>{{airport}}</option>
+                </select>
+            </div>
+  
+            <div class="col-md m-1">
+                <angular2-date-picker class="dateContainer " id="datetimepicker" [(ngModel)]="fromDateTime" [settings]="settings" style="font-size:11px"></angular2-date-picker>
+            </div>  
+            <div class="col-md m-1">
+                <angular2-date-picker class="dateContainer " id="datetimepicker" [(ngModel)]="toDateTime" [settings]="settings" style="font-size:11px"></angular2-date-picker>
+            </div>
+            <div class="m-1 alignSearch">
+                <div class="search-container mr-4" (click)="searchFlights()" style="padding-left: 0px;">
+                    <img src="./assets/img/loupe.png" class=" image-icon" alt="cart">
+           
+                </div>
+             </div>
+               
+        </div>
+        
+        
+    </div>
+    
+    
+    
+     
+</div>

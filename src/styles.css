@@ -1,1 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+@import '../node_modules/bulma/css/bulma.min.css';
+@import 'main.css';
+body {
+    background-color: rgb(248,248,248);
+    height:100%;
+}
+
+html {
+    background-color: rgb(248,248,248);
+}
+
+.selector {
+    background-image: url("https://lh3.googleusercontent.com/proxy/uWsk2AR3rP01wjLllwihUz4r4sEoibggT2R3keYoyDer26lwPKGFxaIdgVZ-xnfHJmjzSAFpjLa1Oc7-06y2wkK4AvlTRVUHZUxqSrz9acjsgrw2kbQ");
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-position: top;
+    background-size: 100% 60%;
+}
+  
+.centeredContent {
+    margin-left:auto !important;
+    margin-right:auto !important;
+    max-width:1200px !important;
+    padding:10px !important;
+    background-color: rgb(248,248,248);
+}
+
+.sectionTitle {
+    font-size: 17px;
+}
+
+.flexContainer {
+    display: flex;
+    flex-wrap:wrap !important;
+    align-items: center;
+    justify-content: space-between;
+    place-content: center;
+}
+
+.image-icon {
+    filter: brightness(0) invert(1);
+    height:17px;
+    align-self: center;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

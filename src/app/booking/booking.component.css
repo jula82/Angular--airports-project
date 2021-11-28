@@ -1,0 +1,24 @@
+
+  .reservationContainer {
+    height: fit-content;
+    background-color:white; 
+    padding:3px;
+    box-shadow: 1px 4px 5px 1px rgb(0 0 0 / 15%);
+    position: relative;
+  }
+
+.flightsContainer {
+    max-height:fit-content;
+    padding:3px;
+    position: relative;
+}
+
+.spaceBetween {
+  display: flex;
+  justify-content: space-between;
+}
+
+.code-container {
+  font-weight: 600;
+  color: rgb(71,168,255);
+}

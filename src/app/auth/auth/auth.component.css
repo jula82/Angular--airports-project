@@ -1,0 +1,40 @@
+.centeredContentAuth {
+    display: flex; justify-content:center; align-items:center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+#loginBtn {
+    border: none;
+    background-color: rgb(71,168,255);
+    color: white;
+    font-size: 11px;
+    padding: 4px 10px;
+    text-transform: uppercase;
+    margin: 10px;
+    font-weight: 500;
+}
+
+#signUp {
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#signUp:hover {
+    color: rgb(71,168,255) !important;
+}
+
+.measurement {
+    min-width: 230px;
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .disabledLogin {
+    background-color:rgb(150,205,255) !important;
+    cursor: not-allowed !important;
+  }
